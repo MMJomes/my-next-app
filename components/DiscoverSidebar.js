@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+// components/DiscoverSidebar.js
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import DiscoverCard from './DiscoverCard';
 import DiscoverCardTwo from './DiscoverCardTwo';
@@ -10,20 +11,18 @@ const Heading = styled.h1`
 `;
 
 const SidebarContainer = styled.div`
-  width: 355px; /* Fixed width */
+  width: 355px;
   background-color: transparent;
   padding: 10px;
   box-sizing: border-box;
-  overflow-y: auto; /* Enable vertical scrolling */
-  height: 100%; /* Fixed height */
+  overflow-y: auto;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
-
-  /* Hide the scrollbar */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   ::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, and Opera */
+    display: none;
   }
 `;
 
@@ -37,7 +36,6 @@ const generateRandomTitle = () => {
 };
 
 const generateRandomImageUrl = () => {
-    // Generate a random number between 1 and 10 for image variations
     const randomNumber = Math.floor(Math.random() * 100) + 1;
     return `https://picsum.photos/200/300?random=${randomNumber}`;
 };
@@ -53,7 +51,7 @@ const getGreeting = () => {
     }
 };
 
-export default function DiscoverSidebar() {
+export default function DiscoverSidebar({ onClickCard }) {
     const [randomTitles, setRandomTitles] = useState([]);
 
     useEffect(() => {
@@ -62,8 +60,8 @@ export default function DiscoverSidebar() {
     }, []);
 
     const renderRandomCard = (id) => {
-        const random = Math.random();
-        if (random < 0.5) {
+        if (id === 1 || id === 2) {
+            // Always render DiscoverCard for the first two cards
             return (
                 <DiscoverCard
                     key={id}
@@ -72,21 +70,37 @@ export default function DiscoverSidebar() {
                     title={randomTitles[id - 1]}
                     url="https://picsum.photos/200/300"
                     size="small"
-                    onClick={() => { }}
+                    onClick={() => onClickCard(randomTitles[id - 1], generateRandomImageUrl())}
                 />
             );
         } else {
-            return (
-                <DiscoverCardTwo
-                    key={id}
-                    id={id.toString()}
-                    imageUrl={generateRandomImageUrl()}
-                    title={randomTitles[id - 1]}
-                    url="https://picsum.photos/200/300"
-                    size="small"
-                    onClick={() => { }}
-                />
-            );
+            // Render random cards for the rest
+            const random = Math.random();
+            if (random < 0.5) {
+                return (
+                    <DiscoverCard
+                        key={id}
+                        id={id.toString()}
+                        imageUrl={generateRandomImageUrl()}
+                        title={randomTitles[id - 1]}
+                        url="https://picsum.photos/200/300"
+                        size="small"
+                        onClick={() => onClickCard(randomTitles[id - 1], generateRandomImageUrl())}
+                    />
+                );
+            } else {
+                return (
+                    <DiscoverCardTwo
+                        key={id}
+                        id={id.toString()}
+                        imageUrl={generateRandomImageUrl()}
+                        title={randomTitles[id - 1]}
+                        url="https://picsum.photos/200/300"
+                        size="small"
+                        onClick={() => onClickCard(randomTitles[id - 1], generateRandomImageUrl())}
+                    />
+                );
+            }
         }
     };
 

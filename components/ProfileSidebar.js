@@ -63,7 +63,9 @@ const RightArrowIcon = ({ size }) => (
 
 export default function ProfileSidebar({ setSelectedContent }) {
     const handleCardClick = (title) => {
-        setSelectedContent(title); // Update the selected content state
+        setSelectedContent(title); 
+        // alert(`Selected Title: ${title}`);
+
     };
 
     return (
