@@ -16,4 +16,4 @@ pnpm dev
 bun dev
 
 
-Replace `https://linkedin.com/in/maungmyint` with your actual LinkedIn profile URL. This README.md file provides information about your Next.js project and includes a link to your LinkedIn profile for contact.
+https://linkedin.com/in/maungmyint .This README.md file provides information about your Next.js project and includes a link to your LinkedIn profile for contact.
