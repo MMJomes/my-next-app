@@ -1,5 +1,5 @@
 // components/MainContent.js
-import React from 'react';
+
 import styled from 'styled-components';
 import ChatInput from './ChatInput';
 

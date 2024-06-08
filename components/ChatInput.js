@@ -1,15 +1,15 @@
-import React from 'react';
+
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 const InputContainer = styled.div`
   background-color: #fff8ef;
-  max-width: 800px; /* Limit the width of the content */
+  max-width: 800px;
   padding: 20px;
   display: flex;
   justify-content: center;
-  align-items: flex-end; /* Align items to the bottom */
+  align-items: flex-end;
 `;
 
 const InputWrapper = styled.div`

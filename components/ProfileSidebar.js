@@ -1,5 +1,4 @@
-// components/ProfileSidebar.js
-import React from 'react';
+
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCompass, faArrowAltCircleRight, faShare, faDashboard, faSoccerBall, faGifts, faSatellite, faFaceAngry, faIndent, faEarth, faCableCar, faPray } from '@fortawesome/free-solid-svg-icons';
@@ -12,7 +11,7 @@ const Heading = styled.h1`
 `;
 
 const Container = styled.div`
-  width: 355px; /* Fixed width */
+  width: 355px;
   background-color: transparent;
   padding: 20px;
   box-sizing: border-box;
@@ -20,9 +19,9 @@ const Container = styled.div`
 
 const TextContainer = styled.div`
   height: 100%;
-  overflow-y: auto; /* Make content scrollable */
-  max-height: calc(100vh - 20px - 60px); /* Adjusted height to fit remaining viewport height after padding and heading */
-`;
+  overflow-y: auto;
+  max-height: calc(100vh - 20px - 60px);
+  `;
 
 const ListTileCard = styled.div`
   border-radius: 2px;
@@ -30,18 +29,18 @@ const ListTileCard = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: background-color 0.3s; /* Smooth transition for background color change */
+  transition: background-color 0.3s;
   &:hover {
-    background-color: #ccc; /* Change background color on hover */
-  }
-  cursor: pointer; /* Change cursor to pointer on hover */
-`;
+    background-color: #ccc;
+    }
+  cursor: pointer;
+  `;
 
 const Title = styled.div`
   flex-grow: 1;
   margin-left: 20px;
-  margin-bottom: 5px; /* Adjusted margin */
-`;
+  margin-bottom: 5px;
+  `;
 
 const ArrowIcon = styled.span`
   display: inline-block;
@@ -98,6 +97,7 @@ export default function ProfileSidebar({ onClickCard }) {
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
+                <hr/>
                 <ListTileCard onClick={() => handleProfileCardClick("Discord" , "https://picsum.photos/200/200" )}>
                     <Icon icon={faDashboard} />
                     <Title>Discord</Title>
@@ -126,6 +126,7 @@ export default function ProfileSidebar({ onClickCard }) {
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
+                <hr />
                 <ListTileCard onClick={() => handleProfileCardClick("Facebook" , "https://picsum.photos/200/200" )}>
                     <Icon icon={faFaceAngry} />
                     <Title>Facebook</Title>
@@ -154,6 +155,8 @@ export default function ProfileSidebar({ onClickCard }) {
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
+                <hr />
+
                 <ListTileCard onClick={() => handleProfileCardClick("Term and Conditions" , "https://picsum.photos/200/200" )}>
                     <Icon icon={faPray} />
                     <Title>Term and Conditions</Title>

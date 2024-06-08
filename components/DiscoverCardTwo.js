@@ -1,12 +1,12 @@
-import React from 'react';
+
 import styled from 'styled-components';
 
 const CardContainer = styled.div`
   position: relative;
   display: inline-block;
-  width: ${({ size }) => size === 'large' ? '100%' : 'calc(50% - 20px)'}; /* Set width based on size prop */
-  max-width: ${({ size }) => size === 'large' ? '100%' : 'calc(318px - 20px)'}; /* Limit width to fit within 318px */
-  height: 200px; /* Fixed height for all cards */
+  width: ${({ size }) => size === 'large' ? '100%' : 'calc(50% - 20px)'};
+  max-width: ${({ size }) => size === 'large' ? '100%' : 'calc(318px - 20px)'};
+  height: 200px;
   margin: 10px;
   border-radius: 10px;
   overflow: hidden;

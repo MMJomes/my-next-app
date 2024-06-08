@@ -1,4 +1,4 @@
-import React from 'react';
+
 import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCompass, faUser } from '@fortawesome/free-solid-svg-icons';
@@ -10,7 +10,7 @@ const SidebarContainer = styled.div`
   border-right: 1px solid #ccc;
   padding: 10px;
   box-sizing: border-box;
-  height: 100vh; /* Full height */
+  height: 100vh;
   display: flex;
   flex-direction: column;
 `;

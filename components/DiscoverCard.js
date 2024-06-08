@@ -1,4 +1,4 @@
-import React from 'react';
+
 import styled from 'styled-components';
 
 const CardContainer = styled.div`
@@ -35,15 +35,14 @@ const CardTextOverlay = styled.div`
   font-weight: bold;
   text-align: center;
   opacity: 1; /* Set initial opacity to 1 */
-  transition: opacity 0.3s ease; /* Remove opacity transition */
-`;
+  transition: opacity 0.3s ease;
+  `;
 
 
 export default function DiscoverCard({ id, imageUrl, title, url, size, onClick }) {
     const handleClick = () => {
         onClick(id, url);
     };
-
     return (
         <CardContainer size={size} onClick={handleClick}>
             <CardImage src={imageUrl} alt={title} />
