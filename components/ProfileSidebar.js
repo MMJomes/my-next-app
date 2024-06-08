@@ -61,102 +61,100 @@ const RightArrowIcon = ({ size }) => (
     </svg>
 );
 
-export default function ProfileSidebar({ setSelectedContent }) {
-    const handleCardClick = (title) => {
-        setSelectedContent(title); 
-        // alert(`Selected Title: ${title}`);
-
+export default function ProfileSidebar({ onClickCard }) {
+    const handleProfileCardClick = (title, url) => {
+        onClickCard(title, url);
     };
 
     return (
         <Container>
             <Heading>Profile</Heading>
             <TextContainer>
-                <ListTileCard onClick={() => handleCardClick("Account")}>
+                <ListTileCard onClick={() => handleProfileCardClick("Account" , "https://picsum.photos/200/200" )}>
                     <Icon icon={faUser} />
                     <Title>Account</Title>
                     <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
-                <ListTileCard onClick={() => handleCardClick("Settings")}>
+                <ListTileCard onClick={() => handleProfileCardClick("Settings" , "https://picsum.photos/200/200" )}>
                     <Icon icon={faCompass} />
                     <Title>Settings</Title>
                     <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
-                <ListTileCard onClick={() => handleCardClick("Feedback")}>
+                <ListTileCard onClick={() => handleProfileCardClick("Feedback" , "https://picsum.photos/200/200" )}>
                     <Icon icon={faArrowAltCircleRight} />
                     <Title>Feedback</Title>
                     <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
-                <ListTileCard onClick={() => handleCardClick("Share")}>
+                <ListTileCard onClick={() => handleProfileCardClick("Share" , "https://picsum.photos/200/200" )}>
                     <Icon icon={faShare} />
                     <Title>Share</Title>
                     <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
-                <ListTileCard onClick={() => handleCardClick("Discord")}>
+                <ListTileCard onClick={() => handleProfileCardClick("Discord" , "https://picsum.photos/200/200" )}>
                     <Icon icon={faDashboard} />
                     <Title>Discord</Title>
                     <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
-                <ListTileCard onClick={() => handleCardClick("Twitter")}>
+                <ListTileCard onClick={() => handleProfileCardClick("Twitter" , "https://picsum.photos/200/200" )}>
                     <Icon icon={faSoccerBall} />
                     <Title>Twitter</Title>
                     <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
-                <ListTileCard onClick={() => handleCardClick("Github")}>
+                <ListTileCard onClick={() => handleProfileCardClick("Github" , "https://picsum.photos/200/200" )}>
                     <Icon icon={faGifts} />
                     <Title>Github</Title>
                     <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
-                <ListTileCard onClick={() => handleCardClick("LinkedIn")}>
+                <ListTileCard onClick={() => handleProfileCardClick("LinkedIn" , "https://picsum.photos/200/200" )}>
                     <Icon icon={faSatellite} />
                     <Title>LinkedIn</Title>
                     <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
-                <ListTileCard onClick={() => handleCardClick("Facebook")}>
+                <ListTileCard onClick={() => handleProfileCardClick("Facebook" , "https://picsum.photos/200/200" )}>
                     <Icon icon={faFaceAngry} />
                     <Title>Facebook</Title>
                     <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
-                <ListTileCard onClick={() => handleCardClick("Instagram")}>
+                <ListTileCard onClick={() => handleProfileCardClick("Instagram" , "https://picsum.photos/200/200" )}>
                     <Icon icon={faIndent} />
                     <Title>Instagram</Title>
                     <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
-                <ListTileCard onClick={() => handleCardClick("Email")}>
+                <ListTileCard onClick={() => handleProfileCardClick("Email" , "https://picsum.photos/200/200" )}>
                     <Icon icon={faEarth} />
                     <Title>Email</Title>
                     <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
-                <ListTileCard onClick={() => handleCardClick("Privacy")}>
+                <ListTileCard onClick={() => handleProfileCardClick("Privacy" , "https://picsum.photos/200/200" )}>
                     <Icon icon={faCableCar} />
                     <Title>Privacy</Title>
                     <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
-                <ListTileCard onClick={() => handleCardClick("Term and Conditions")}>
+                <ListTileCard onClick={() => handleProfileCardClick("Term and Conditions" , "https://picsum.photos/200/200" )}>
                     <Icon icon={faPray} />
                     <Title>Term and Conditions</Title>
                     <ArrowIcon size={48}>

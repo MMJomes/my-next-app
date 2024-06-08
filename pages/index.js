@@ -33,13 +33,20 @@ export default function Home() {
     setSelectedImage(imageUrl);
   };
 
+  const handleProfileCardClick = (title, imageUrl) => {
+    setSelectedTitle(title);
+    setSelectedImage(imageUrl);
+  };
+  
+
+
   return (
     <Container>
       <LeftSidebar activeItem={activeItem} toggleItem={toggleItem} />
       {activeItem === 'Discover' && (
         <DiscoverSidebar onClickCard={handleDiscoverCardClick} />
       )}
-      {activeItem === 'Profile' && <ProfileSidebar />}
+      {activeItem === 'Profile' && <ProfileSidebar onClickCard={handleProfileCardClick} />}
       <ContentWrapper>
         <MainContent selectedImage={selectedImage} selectedTitle={selectedTitle} />
       </ContentWrapper>
