@@ -1,3 +1,4 @@
+// components/MainContent.js
 import React from 'react';
 import styled from 'styled-components';
 import ChatInput from './ChatInput';
@@ -34,17 +35,21 @@ const Text = styled.p`
 
 const ChatInputWrapper = styled.div`
   width: 100%;
+  display: ${(props) => (props.showChatInput ? 'block' : 'none')}; /* Show or hide the ChatInput */
 `;
 
-export default function MainContent() {
+export default function MainContent({ selectedContent }) {
+  // Determine whether to show the ChatInput based on selectedContent
+  const showChatInput = !selectedContent;
+
   return (
     <MainContentContainer>
       <ContentWrapper>
-        <Text>Hey there, great to meet you. I am Pi, your personal AI.</Text>
-        <Text>My goal is to be useful, friendly and fun. Ask me for advice, for answers, or let is talk about whatever is on your mind.</Text>
-        <Text>How is your day going?</Text>
+        <Text>{selectedContent ? `You selected: ${selectedContent}` : "Hey there, great to meet you. I am Pi, your personal AI."}</Text>
+        <Text>{selectedContent ? '' : "My goal is to be useful, friendly and fun. Ask me for advice, for answers, or let us talk about whatever is on your mind."}</Text>
+        <Text>{selectedContent ? '' : "How is your day going?"}</Text>
       </ContentWrapper>
-      <ChatInputWrapper>
+      <ChatInputWrapper showChatInput={showChatInput}>
         <ChatInput />
       </ChatInputWrapper>
     </MainContentContainer>

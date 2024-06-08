@@ -1,9 +1,8 @@
+// components/ProfileSidebar.js
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleRight, faArrowRight, faArrowRightLong, faArrowsAlt, faArrowsDownToLine, faArrowsTurnRight, faCableCar, faCompass, faDashboard, faEarth, faFaceAngry, faGifts, faPray, faShare, faSoccerBall, faUser } from '@fortawesome/free-solid-svg-icons';
-import { faIndent } from '@fortawesome/free-solid-svg-icons/faIndent';
-import { faSatellite } from '@fortawesome/free-solid-svg-icons/faSatellite';
+import { faUser, faCompass, faArrowAltCircleRight, faShare, faDashboard, faSoccerBall, faGifts, faSatellite, faFaceAngry, faIndent, faEarth, faCableCar, faPray } from '@fortawesome/free-solid-svg-icons';
 
 const Heading = styled.h1`
   font-size: 28px;
@@ -54,6 +53,7 @@ const ArrowIcon = styled.span`
 const Icon = styled(FontAwesomeIcon)`
   margin-bottom: 0px;
 `;
+
 const RightArrowIcon = ({ size }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width={size} height={size}>
         <path d="M0 0h24v24H0z" fill="none" />
@@ -61,104 +61,103 @@ const RightArrowIcon = ({ size }) => (
     </svg>
 );
 
-// Function to handle click on ListTileCard
-const handleCardClick = (title) => {
-    alert(`Clicked on ${title} card`); // Example action, replace with your desired action
-};
+export default function ProfileSidebar({ setSelectedContent }) {
+    const handleCardClick = (title) => {
+        setSelectedContent(title); // Update the selected content state
+    };
 
-export default function ProfileSidebar() {
     return (
         <Container>
             <Heading>Profile</Heading>
             <TextContainer>
                 <ListTileCard onClick={() => handleCardClick("Account")}>
-                    <Icon icon={faUser}></Icon>
+                    <Icon icon={faUser} />
                     <Title>Account</Title>
-                    <ArrowIcon size={48} >
+                    <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
                 <ListTileCard onClick={() => handleCardClick("Settings")}>
-                    <Icon icon={faCompass}></Icon>
+                    <Icon icon={faCompass} />
                     <Title>Settings</Title>
-                    <ArrowIcon size={48} >
+                    <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
                 <ListTileCard onClick={() => handleCardClick("Feedback")}>
-                    <Icon icon={faArrowAltCircleRight}></Icon>
+                    <Icon icon={faArrowAltCircleRight} />
                     <Title>Feedback</Title>
-                    <ArrowIcon size={48} >
+                    <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
                 <ListTileCard onClick={() => handleCardClick("Share")}>
-                    <Icon icon={faShare}></Icon>   
+                    <Icon icon={faShare} />
                     <Title>Share</Title>
-                    <ArrowIcon size={48} >
+                    <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
                 <ListTileCard onClick={() => handleCardClick("Discord")}>
-                    <Icon icon={faDashboard}></Icon>
+                    <Icon icon={faDashboard} />
                     <Title>Discord</Title>
-                    <ArrowIcon size={48} >
+                    <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
-                    </ArrowIcon>    
+                    </ArrowIcon>
                 </ListTileCard>
-                <ListTileCard onClick={() => handleCardClick("Twitter")}>   
-                    <Icon icon={faSoccerBall}></Icon>
+                <ListTileCard onClick={() => handleCardClick("Twitter")}>
+                    <Icon icon={faSoccerBall} />
                     <Title>Twitter</Title>
-                    <ArrowIcon size={48} >
+                    <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
                 <ListTileCard onClick={() => handleCardClick("Github")}>
-                    <Icon icon={faGifts}></Icon>
+                    <Icon icon={faGifts} />
                     <Title>Github</Title>
-                    <ArrowIcon size={48} >
+                    <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
                 <ListTileCard onClick={() => handleCardClick("LinkedIn")}>
-                    <Icon icon={faSatellite}></Icon>
+                    <Icon icon={faSatellite} />
                     <Title>LinkedIn</Title>
-                    <ArrowIcon size={48} >
+                    <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
                 <ListTileCard onClick={() => handleCardClick("Facebook")}>
-                    <Icon icon={faFaceAngry}></Icon>
+                    <Icon icon={faFaceAngry} />
                     <Title>Facebook</Title>
-                    <ArrowIcon size={48} >
+                    <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
-                    </ArrowIcon>    
+                    </ArrowIcon>
                 </ListTileCard>
                 <ListTileCard onClick={() => handleCardClick("Instagram")}>
-                    <Icon icon={faIndent}></Icon>
+                    <Icon icon={faIndent} />
                     <Title>Instagram</Title>
-                    <ArrowIcon size={48} >
+                    <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
                 <ListTileCard onClick={() => handleCardClick("Email")}>
-                    <Icon icon={faEarth}></Icon>
+                    <Icon icon={faEarth} />
                     <Title>Email</Title>
-                    <ArrowIcon size={48} >
-                        <RightArrowIcon size={48} />
-                    </ArrowIcon>    
-                </ListTileCard>
-                <ListTileCard onClick={() => handleCardClick("Privacy")}>
-                    <Icon icon={faCableCar}></Icon>
-                    <Title>Privacy</Title>
-                    <ArrowIcon size={48} >
+                    <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>
-                <ListTileCard onClick={() => handleCardClick("Term and Conditions")}>  
-                    <Icon icon={faPray}></Icon>
+                <ListTileCard onClick={() => handleCardClick("Privacy")}>
+                    <Icon icon={faCableCar} />
+                    <Title>Privacy</Title>
+                    <ArrowIcon size={48}>
+                        <RightArrowIcon size={48} />
+                    </ArrowIcon>
+                </ListTileCard>
+                <ListTileCard onClick={() => handleCardClick("Term and Conditions")}>
+                    <Icon icon={faPray} />
                     <Title>Term and Conditions</Title>
-                    <ArrowIcon size={48} >
+                    <ArrowIcon size={48}>
                         <RightArrowIcon size={48} />
                     </ArrowIcon>
                 </ListTileCard>

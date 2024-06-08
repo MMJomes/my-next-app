@@ -20,6 +20,7 @@ const ContentWrapper = styled.div`
 
 export default function Home() {
   const [activeItem, setActiveItem] = useState('Discover');
+  const [selectedContent, setSelectedContent] = useState('');
 
   const toggleItem = (item) => {
     setActiveItem((prevActiveItem) => (prevActiveItem === item ? '' : item));
@@ -29,9 +30,9 @@ export default function Home() {
     <Container>
       <LeftSidebar activeItem={activeItem} toggleItem={toggleItem} />
       {activeItem === 'Discover' && <DiscoverSidebar />}
-      {activeItem === 'Profile' && <ProfileSidebar />}
+      {activeItem === 'Profile' && <ProfileSidebar setSelectedContent={setSelectedContent} />}
       <ContentWrapper>
-        <MainContent />
+        <MainContent selectedContent={selectedContent} />
       </ContentWrapper>
     </Container>
   );
